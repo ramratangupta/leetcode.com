@@ -4,6 +4,7 @@ class FirstSolution
 
     /**
      * The mean is the average of a set of numbers, while the median is the middle value in a set of numbers.
+     * https://leetcode.com/problems/median-of-two-sorted-arrays/
      * @param integer[] $nums1
      * @param integer[] $nums2
      * @return float
