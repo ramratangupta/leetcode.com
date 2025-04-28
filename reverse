@@ -1,0 +1,32 @@
+import Flask from Flask
+app = Flask(__name__)
+@app.route("/reverse")
+def reverse(req,rep):
+    string = req.get("string")
+    return string[::-1]
+if __name__ == "__main__":
+    app.listen(host="127.0.0.1",port="3000")
+ _________________________   
+import React,{useState} from 'react'
+function App(){
+    cosnt [str,setStr] = useState("");
+    cosnt [reverse,setReverse] = useState("");
+   const callAPI = async ()=>{
+        try{
+             const resp = await fetch("http://127.0.0.1:3000/reverse?string="+str);
+            if(resp.ok){
+                setReverse(resp.text())
+            }else{
+                setReverse("");
+            }
+        }catch(e){
+            setReverse("");
+        }
+    }
+    return <>
+        <input type ="text" value = {str} onChange={(e)=>setStr(e.target.valve)}>
+        <button onClick={callAPI}> Reverse The String</button>
+        {reverse}
+    </>
+}
+    
